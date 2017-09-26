@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books Home</title>
+</head>
+<body>
+	<h2>Welcome {{ user.name }}</h2>
+	<p><a href="/add">Add book and review</a> | <a href="/logout">Logout</a></p>
+	<br>
+	{% for review in reviews %}
+	<h2>Recent Book Reviews:</h2>
+	<p><a href="">{{ review.book.title }}</a></p>
+	<p>Rating: {{ review.rating }}</p>
+	<p><a href="/user/{{review.reviewer.id}}">{{ review.reviewer.name}}</a> says: {{ review.review }}</p>
+	{% endfor %}
+
+</body>
+</html>
